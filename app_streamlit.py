@@ -3,6 +3,64 @@ from sentence_transformers import SentenceTransformer , util
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 import torch
 import streamlit as stm
+stm.set_page_config(
+    page_title="PDF(ISO/IEC) Question Answering",
+    page_icon="🤖",
+    layout="centered"
+)
+
+stm.markdown("""
+<style>
+
+.stApp {
+    background: linear-gradient(135deg, #0f172a, #111827, #1e1b4b);
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #60a5fa;
+}
+
+p {
+    color: #d1d5db;
+    font-size: 17px;
+}
+
+.stTextInput > div > div > input {
+    background-color: #1f2937;
+    color: white;
+    border: 1px solid #4b5563;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(90deg, #1d4ed8, #6d28d9);
+}
+
+[data-testid="stAlert"] {
+    border-radius: 12px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 stm.title("👋 Welcome")
 stm.write( """ ### PDF Question Answering Model
 Hello! I am an AI model designed to understand the content of your PDF
